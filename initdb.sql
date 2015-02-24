@@ -1,0 +1,6 @@
+CREATE TABLE `ada`.`names` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  `length` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC));

@@ -1,0 +1,14 @@
+*.pidb
+*.userprefs
+*bin/
+*test-results/
+*.bak
+*.checksum
+*~
+*.orig
+*.user
+*obj/
+*.suo
+_tmp/
+src/*/app.config
+

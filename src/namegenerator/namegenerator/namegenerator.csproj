@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{72846DC5-14EC-4981-8BCF-F9B96C684B75}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>namegenerator</RootNamespace>
+    <AssemblyName>namegenerator</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\..\libs\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Generator.cs" />
+    <Compile Include="IValidator.cs" />
+    <Compile Include="IStorage.cs" />
+    <Compile Include="Permutator.cs" />
+    <Compile Include="DbStorage.cs" />
+    <Compile Include="GenerateResult.cs" />
+    <Compile Include="ThreeLetterValidator.cs" />
+    <Compile Include="MultiLetterValidator.cs" />
+    <Compile Include="Args.cs" />
+    <Compile Include="IRule.cs" />
+    <Compile Include="Rules\RepeatedCharactersRule.cs" />
+    <Compile Include="Rules\NumberOfVowelsRule.cs" />
+    <Compile Include="Rules\ConsonantsInARowRule.cs" />
+    <Compile Include="Rules\LetterCountRule.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Rules\" />
+  </ItemGroup>
+</Project>
