@@ -22,7 +22,7 @@ namespace namegenerator
 
 
 
-			IStorage storage = new DbStorage ();
+			IStorage storage = new BufferedDbStorage ();
 			storage.Init ();
 
 			if (doClear) {
@@ -62,7 +62,7 @@ namespace namegenerator
 			}
 
 			if (doSix) {
-				RunIt ("5 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
+				RunIt ("6 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
 					"a"
 				, consonants
 				, all
@@ -83,6 +83,8 @@ namespace namegenerator
 				, all
 				});
 			}
+
+			storage.Done ();
 		}
 
 

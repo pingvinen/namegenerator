@@ -18,6 +18,7 @@
     <WarningLevel>4</WarningLevel>
     <Externalconsole>true</Externalconsole>
     <PlatformTarget>x86</PlatformTarget>
+    <Commandlineparameters>3 4 5 6 7 clear</Commandlineparameters>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>full</DebugType>
@@ -53,6 +54,9 @@
     <Compile Include="Rules\NumberOfVowelsRule.cs" />
     <Compile Include="Rules\ConsonantsInARowRule.cs" />
     <Compile Include="Rules\LetterCountRule.cs" />
+    <Compile Include="Rules\DoubleVowelsRule.cs" />
+    <Compile Include="BufferedDbStorage.cs" />
+    <Compile Include="Rules\EndsOnTwoConsonantsRule.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

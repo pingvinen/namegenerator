@@ -18,6 +18,8 @@ namespace namegenerator
 				, new LetterCountRule("h", 2)
 				, new LetterCountRule("q", 2)
 				, new LetterCountRule("z", 2)
+				, new DoubleVowelsRule()
+				, new EndsOnTwoConsonantsRule()
 			};
 		}
 

@@ -38,6 +38,8 @@
     <Compile Include="Rules\NumberOfVowelsRuleTests.cs" />
     <Compile Include="Rules\ConsonantsInARowRuleTests.cs" />
     <Compile Include="Rules\LetterCountRuleTests.cs" />
+    <Compile Include="Rules\DoubleVowelsRuleTests.cs" />
+    <Compile Include="Rules\EndsOnTwoConsonantsRuleTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

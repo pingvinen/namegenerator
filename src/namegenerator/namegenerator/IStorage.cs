@@ -7,6 +7,7 @@ namespace namegenerator
 		void Save(string name);
 		void Init();
 		void Clear();
+		void Done();
 	}
 }
 
