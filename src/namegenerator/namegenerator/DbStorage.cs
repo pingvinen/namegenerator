@@ -13,7 +13,7 @@ namespace namegenerator
 
 		public void Init()
 		{
-			this.db = new MySqlConnection ("Server=127.0.0.1;Uid=root;Pwd=mrkuhupa;Database=ada;");
+			this.db = new MySqlConnection ("Server=127.0.0.1;Uid=namegen;Pwd=123456;Database=ada;");
 			this.db.Open ();
 		}
 
