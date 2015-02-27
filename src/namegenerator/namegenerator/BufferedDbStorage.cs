@@ -22,7 +22,7 @@ namespace namegenerator
 		{
 			this.buffer.Add (name);
 
-			if (this.buffer.Count == 5000)
+			if (this.buffer.Count == 1200)
 			{
 				this.WriteToDb ();
 			}
@@ -41,11 +41,15 @@ namespace namegenerator
 			{
 				MySqlCommand cmd = this.db.CreateCommand ();
 				cmd.CommandText = String.Format ("replace into `names` set `name`=@name, `length`=@length");
+				cmd.Prepare();
+				cmd.Parameters.AddWithValue ("@name", "");
+				cmd.Parameters.AddWithValue ("@length", "");
 
 				foreach (string name in this.buffer)
 				{
-					cmd.Parameters.AddWithValue ("@name", name);
-					cmd.Parameters.AddWithValue ("@length", name.Length);
+					cmd.Parameters["@name"].Value = name;
+					cmd.Parameters["@length"].Value = name.Length;
+
 
 					cmd.ExecuteNonQuery ();
 				}
