@@ -20,6 +20,9 @@ namespace namegenerator
 				, new LetterCountRule("z", 2)
 				, new DoubleVowelsRule()
 				, new EndsOnTwoConsonantsRule()
+				, new EchoRule()
+				, new EndsOnThreeVowelsRule()
+				, new LetterNotFollowedByRule("v", "^aeiouy") // v can be followed by vowels only
 			};
 		}
 

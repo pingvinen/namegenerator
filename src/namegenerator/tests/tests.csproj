@@ -40,6 +40,9 @@
     <Compile Include="Rules\LetterCountRuleTests.cs" />
     <Compile Include="Rules\DoubleVowelsRuleTests.cs" />
     <Compile Include="Rules\EndsOnTwoConsonantsRuleTests.cs" />
+    <Compile Include="Rules\EchoRuleTests.cs" />
+    <Compile Include="Rules\EndsOnThreeVowelsRuleTests.cs" />
+    <Compile Include="Rules\LetterNotFollowedByRuleTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

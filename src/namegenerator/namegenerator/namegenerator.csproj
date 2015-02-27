@@ -57,6 +57,9 @@
     <Compile Include="Rules\DoubleVowelsRule.cs" />
     <Compile Include="BufferedDbStorage.cs" />
     <Compile Include="Rules\EndsOnTwoConsonantsRule.cs" />
+    <Compile Include="Rules\EchoRule.cs" />
+    <Compile Include="Rules\EndsOnThreeVowelsRule.cs" />
+    <Compile Include="Rules\LetterNotFollowedByRule.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
