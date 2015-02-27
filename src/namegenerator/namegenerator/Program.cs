@@ -98,8 +98,8 @@ namespace namegenerator
 			GenerateResult res = gen.Generate (allowed, validator, storage);
 
 			Console.WriteLine ();
-			Console.WriteLine ("Generated: {0}", res.EntriesGenerated);
-			Console.WriteLine ("Valid: {0}", res.ValidEntries);
+			Console.WriteLine ("Generated: {0:#,##0}", res.EntriesGenerated);
+			Console.WriteLine ("Valid: {0:#,##0}", res.ValidEntries);
 			Console.WriteLine ("In: {0}", res.TimeUsed);
 		}
 	}

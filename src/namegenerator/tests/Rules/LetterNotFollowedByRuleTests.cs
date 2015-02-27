@@ -38,6 +38,20 @@ namespace tests
 		{
 			Assert.AreEqual (true, this.rule.Complies ("yeahwithavandstuff"));
 		}
+
+		[Test]
+		public void MustBeFollowedByVowel_Complies()
+		{
+			this.rule = new LetterNotFollowedByRule ("v", "^aeiouy");
+			Assert.AreEqual (true, this.rule.Complies ("medieval"));
+		}
+
+		[Test]
+		public void MustBeFollowedByVowel_ISaidNoConsonants()
+		{
+			this.rule = new LetterNotFollowedByRule ("v", "^aeiouy");
+			Assert.AreEqual (false, this.rule.Complies ("medievgal"));
+		}
 	}
 }
 
