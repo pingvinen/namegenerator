@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using MySql.Data.MySqlClient;
+using System.Text;
 
 namespace namegenerator
 {
@@ -22,7 +23,7 @@ namespace namegenerator
 		{
 			this.buffer.Add (name);
 
-			if (this.buffer.Count == 1200)
+			if (this.buffer.Count == 10000)
 			{
 				this.WriteToDb ();
 			}
@@ -30,38 +31,28 @@ namespace namegenerator
 
 		public override void Done()
 		{
-			this.WriteToDb ();
+			if (this.buffer.Count > 0)
+			{
+				this.WriteToDb ();
+			}
 		}
 
 		private void WriteToDb()
 		{
-			var transaction = this.db.BeginTransaction ();
+			var sb = new StringBuilder();
+			sb.Append("replace into `names` (`name`, `length`) values ");
 
-			try
+			foreach (string name in this.buffer)
 			{
-				MySqlCommand cmd = this.db.CreateCommand ();
-				cmd.CommandText = String.Format ("replace into `names` set `name`=@name, `length`=@length");
-				cmd.Prepare();
-				cmd.Parameters.AddWithValue ("@name", "");
-				cmd.Parameters.AddWithValue ("@length", "");
-
-				foreach (string name in this.buffer)
-				{
-					cmd.Parameters["@name"].Value = name;
-					cmd.Parameters["@length"].Value = name.Length;
-
-
-					cmd.ExecuteNonQuery ();
-				}
-
-				transaction.Commit();
-				this.buffer.Clear();
+				sb.AppendFormat("('{0}', {1}),", name, name.Length);
 			}
 
-			catch (Exception)
-			{
-				transaction.Rollback ();
-			}
+			MySqlCommand cmd = this.db.CreateCommand ();
+			cmd.CommandText = sb.ToString().Substring(0, sb.Length - 1);
+
+			cmd.ExecuteNonQuery ();
+
+			this.buffer.Clear();
 		}
 	}
 }
