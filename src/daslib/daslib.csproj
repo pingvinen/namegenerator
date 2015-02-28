@@ -57,6 +57,7 @@
     <Compile Include="NameRepository.cs" />
     <Compile Include="NameEntry.cs" />
     <Compile Include="Paginator.cs" />
+    <Compile Include="ValidatorFactory.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

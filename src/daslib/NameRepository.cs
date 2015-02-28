@@ -7,9 +7,11 @@ namespace daslib
 	public class NameRepository
 	{
 		private readonly MySqlConnectionFactory dbFactory;
+		private readonly ValidatorFactory validatorFactory;
 
-		public NameRepository (MySqlConnectionFactory dbFactory)
+		public NameRepository (MySqlConnectionFactory dbFactory, ValidatorFactory validatorFactory)
 		{
+			this.validatorFactory = validatorFactory;
 			this.dbFactory = dbFactory;
 		}
 
@@ -67,6 +69,7 @@ namespace daslib
 			res.Id = reader.GetInt32 ("id");
 			res.Name = reader.GetString ("name");
 			res.Length = reader.GetInt32 ("length");
+			res.IsValid = this.validatorFactory.Get (res.Length).IsValid(res.Name);
 
 			return res;
 		}

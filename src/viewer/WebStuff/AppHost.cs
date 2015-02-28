@@ -29,6 +29,7 @@ namespace viewer.WebStuff
 			container.Register<ICacheClient>(new MemoryCacheClient());
 			container.Register<MySqlConnectionFactory> (new MySqlConnectionFactory ());
 			container.RegisterAutoWired<NameRepository> ();
+			container.RegisterAutoWired<ValidatorFactory> ();
 
 			this.ServiceExceptionHandler = (IHttpRequest httpReq, object request, Exception exception) => {
 				Console.Error.WriteLine("{0}\n\n-----\n\n{1}", request, exception);

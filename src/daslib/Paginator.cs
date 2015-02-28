@@ -6,7 +6,7 @@ namespace daslib
 {
 	public class Paginator
 	{
-		private int rangeCount = 5;
+		private int rangeCount = 4;
 
 		public int TotalPages { get; set; }
 		public int CurrentPage { get; set; }

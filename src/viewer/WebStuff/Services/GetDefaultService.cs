@@ -12,12 +12,11 @@ namespace viewer
 		public GetDefaultService(NameRepository repository)
 		{
 			this.repository = repository;
-
 		}
 
 		public DefaultData Get(GetDefault request)
 		{
-			int namesPerPage = 100;
+			int namesPerPage = 102;
 			int offset = request.Page * namesPerPage;
 
 			var data = new DefaultData ();
