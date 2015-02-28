@@ -29,7 +29,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <HintPath>..\..\..\libs\nunit.framework.dll</HintPath>
+      <HintPath>..\..\..\libs\nuget\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

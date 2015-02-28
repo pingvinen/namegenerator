@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+TMPZIP=/tmp/from_nuget.zip
+TMPDIR=/tmp/from_nuget
+DEST=libs/nuget/
+DOCLEANUP=true
+SS_VERSION="3.9.71"
+
+function get_package() {
+	local name=$1
+	local version=$2
+	local dir=$3
+	local additional=$4
+	local tmpdir="${TMPDIR}_$name"
+	echo "$name $version"
+	wget --quiet -O $TMPZIP http://packages.nuget.org/api/v2/package/$name/$version
+	unzip -q -o $TMPZIP lib/* -d $tmpdir
+
+	find $tmpdir/lib/$dir $additional -type f \( -iname "*.dll" -o -iname "*.xml" \) -exec mv '{}' $DEST \;
+
+	if $DOCLEANUP ; then
+		rm $tmpdir -rf
+		rm $TMPZIP
+	fi
+}
+
+mkdir $DEST -p
+rm $DEST/* -rf
+
+get_package "ServiceStack" $SS_VERSION "net35"
+get_package "ServiceStack.Common" $SS_VERSION "net35"
+get_package "ServiceStack.Text" $SS_VERSION "net35"
+get_package "NUnit" "2.6.4" ""
+get_package "MySql.Data" "6.9.5" "net40"
