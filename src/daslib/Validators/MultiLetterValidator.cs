@@ -46,6 +46,7 @@ namespace daslib.Validators
 				, new RegexRule("^a[^xgjq][^bcefghjmnpqvwxz]")
 				, new RegexRule("^aco[^csy]", "^aco")
 				, new RegexRule("^az[^iuyo]r", "^az")
+				, new RegexRule("^aw[^yu]", "^aw")
 				, new DoesNotStartWithRule("abao")
 				, new DoesNotStartWithRule("ahy")
 

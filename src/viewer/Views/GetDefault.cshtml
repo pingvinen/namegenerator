@@ -7,7 +7,7 @@
 
 	<div class="row">
 		<div class="col-md-12 text-center">
-			<p>The database has @(String.Format("{0:#,##0}", Model.NumberOfNames)) names!!</p>
+			<p>The database contains @(String.Format("{0:#,##0}", Model.NumberOfNames)) names!!</p>
 		</div>
 	</div>
 
@@ -25,7 +25,7 @@
 					<a href="/default/@(page)" class="btn">@(page+1)</a>
 				}
 
-				<a href="/default/@(Model.Paginator.CurrentPage)" class="btn active">@(Model.Paginator.CurrentPage+1)</a>
+				<a href="/default/@(Model.Paginator.CurrentPage)" class="btn btn-default">@(Model.Paginator.CurrentPage+1)</a>
 
 				@foreach (int page in Model.Paginator.PagesAfter) {
 					<a href="/default/@(page)" class="btn">@(page+1)</a>
@@ -49,7 +49,7 @@
 		}
 
 		<div class="col-md-2 name @(entry.IsValid ? "" : "invalid")">
-			<a href="#">@(entry.Name)</a>
+			@(entry.Name)
 		</div>
 
 		if (count == 5) {
