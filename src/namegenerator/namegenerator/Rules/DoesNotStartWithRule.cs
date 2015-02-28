@@ -2,11 +2,11 @@
 
 namespace namegenerator
 {
-	public class StartsWithRule : IRule
+	public class DoesNotStartWithRule : IRule
 	{
 		string notAllowed;
 
-		public StartsWithRule (string notAllowed)
+		public DoesNotStartWithRule (string notAllowed)
 		{
 			this.notAllowed = notAllowed;
 		}

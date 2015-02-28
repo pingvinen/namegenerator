@@ -5,14 +5,14 @@ using namegenerator;
 namespace tests
 {
 	[TestFixture]
-	public class EndsWithRuleTests
+	public class DoesNotEndWithRuleTests
 	{
 		private IRule rule;
 
 		[SetUp]
 		public void Setup()
 		{
-			this.rule = new EndsWithRule ("z");
+			this.rule = new DoesNotEndWithRule ("z");
 		}
 
 		[Test]

@@ -43,8 +43,9 @@
     <Compile Include="Rules\EchoRuleTests.cs" />
     <Compile Include="Rules\EndsOnThreeVowelsRuleTests.cs" />
     <Compile Include="Rules\LetterNotFollowedByRuleTests.cs" />
-    <Compile Include="Rules\StartsWithRuleTests.cs" />
-    <Compile Include="Rules\EndsWithRuleTests.cs" />
+    <Compile Include="Rules\RegexRuleTests.cs" />
+    <Compile Include="Rules\DoesNotStartWithRuleTests.cs" />
+    <Compile Include="Rules\DoesNotEndWithRuleTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

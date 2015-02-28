@@ -2,11 +2,11 @@
 
 namespace namegenerator
 {
-	public class EndsWithRule : IRule
+	public class DoesNotEndWithRule : IRule
 	{
 		string notAllowed;
 
-		public EndsWithRule (string notAllowed)
+		public DoesNotEndWithRule (string notAllowed)
 		{
 			this.notAllowed = notAllowed;
 		}
@@ -20,7 +20,7 @@ namespace namegenerator
 
 		public string Title {
 			get {
-				return String.Format ("May not end with {0}", this.notAllowed);
+				return String.Format ("Does not end with {0}", this.notAllowed);
 			}
 		}
 

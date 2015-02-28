@@ -60,8 +60,10 @@
     <Compile Include="Rules\EchoRule.cs" />
     <Compile Include="Rules\EndsOnThreeVowelsRule.cs" />
     <Compile Include="Rules\LetterNotFollowedByRule.cs" />
-    <Compile Include="Rules\StartsWithRule.cs" />
-    <Compile Include="Rules\EndsWithRule.cs" />
+    <Compile Include="Rules\RegexRule.cs" />
+    <Compile Include="Rules\DoesNotStartWithRule.cs" />
+    <Compile Include="Rules\DoesNotEndWithRule.cs" />
+    <Compile Include="AcceptingValidator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
