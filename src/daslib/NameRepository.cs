@@ -31,16 +31,28 @@ namespace daslib
 		public int CountNames()
 		{
 			var cmd = this.GetCommand ();
-			cmd.CommandText = "select count(*) from `names`";
-
-			var reader = cmd.ExecuteReader (System.Data.CommandBehavior.SingleRow);
-
-			if (reader.Read())
+			MySqlDataReader reader = null;
+			try
 			{
-				return reader.GetInt32 (0);
-			}
+				cmd.CommandText = "select count(*) from `names`";
 
-			return 0;
+				reader = cmd.ExecuteReader (System.Data.CommandBehavior.SingleRow);
+
+				if (reader.Read())
+				{
+					return reader.GetInt32 (0);
+				}
+
+				return 0;
+			}
+			finally
+			{
+				if (reader != default(MySqlDataReader))
+				{
+					reader.Close ();
+				}
+				cmd.Connection.Close ();
+			}
 		}
 
 		public IList<NameEntry> GetList(int offset, int limit)
@@ -48,18 +60,30 @@ namespace daslib
 			IList<NameEntry> list = new List<NameEntry>();
 
 			var cmd = this.GetCommand ();
-			cmd.CommandText = "select * from `names` order by `id` limit @offset, @limit";
-			cmd.Parameters.AddWithValue ("@offset", offset);
-			cmd.Parameters.AddWithValue ("@limit", limit);
-
-			var reader = cmd.ExecuteReader (System.Data.CommandBehavior.CloseConnection);
-
-			while (reader.Read())
+			MySqlDataReader reader = null;
+			try
 			{
-				list.Add (this.Populate (reader));
-			}
+				cmd.CommandText = "select * from `names` order by `id` limit @offset, @limit";
+				cmd.Parameters.AddWithValue ("@offset", offset);
+				cmd.Parameters.AddWithValue ("@limit", limit);
 
-			return list;
+				reader = cmd.ExecuteReader ();
+
+				while (reader.Read())
+				{
+					list.Add (this.Populate (reader));
+				}
+
+				return list;
+			}
+			finally
+			{
+				if (reader != default(MySqlDataReader))
+				{
+					reader.Close ();
+				}
+				cmd.Connection.Close ();
+			}
 		}
 
 		private NameEntry Populate(MySqlDataReader reader)
