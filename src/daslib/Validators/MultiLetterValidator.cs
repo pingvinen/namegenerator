@@ -45,7 +45,7 @@ namespace daslib.Validators
 
 				, new RegexRule("[^jfw]$") // does not end with any of these
 
-				, new RegexRule("^a[^xgjq][^bcefghjmnpqvwxz]")
+				, new RegexRule("^a[^xgjq][^bcefghjmnpqvwxz]", "^a[xgjq]")
 				, new RegexRule("^aco[^csy]", "^aco")
 				, new RegexRule("^az[^iuyo]r", "^az.r")
 				, new RegexRule("^aw[^yu]", "^aw")
