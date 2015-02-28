@@ -91,6 +91,9 @@
     <None Include="Views\GetDefault.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="assets\js\jeresig.jquery.hotkeys.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\daslib\daslib.csproj">

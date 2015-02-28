@@ -2,6 +2,7 @@
 @inherits ViewPage<viewer.WebStuff.Models.Types.DefaultData>
 
 @section PageScripts {
+	<script type="text/javascript" src="/assets/js/jeresig.jquery.hotkeys.js"></script>
 	<script type="text/javascript" src="/assets/js/default-init.js"></script>
 }
 
@@ -17,7 +18,7 @@
 			<div class="col-md-2">
 				<a href="/default/@(Model.Paginator.FirstPage)" class="btn btn-default">First</a>
 
-				<a href="/default/@(Model.Paginator.PrevPage)" class="btn btn-primary">Prev</a>
+				<a href="/default/@(Model.Paginator.PrevPage)" class="btn btn-primary" id="prev">Prev</a>
 			</div>
 
 			<div class="col-md-8 text-center">
@@ -33,7 +34,7 @@
 			</div>
 
 			<div class="col-md-2 text-right">
-				<a href="/default/@(Model.Paginator.NextPage)" class="btn btn-primary">Next</a>
+				<a href="/default/@(Model.Paginator.NextPage)" class="btn btn-primary" id="next">Next</a>
 
 				<a href="/default/@(Model.Paginator.LastPage)" class="btn btn-default">Last</a>
 			</div>

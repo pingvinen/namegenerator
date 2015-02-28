@@ -1,50 +1,9 @@
 ﻿(function($, undefined) {
 
-/*
-	function getNames(offset) {
-		var deferred = new $.Deferred();
-		var promise = deferred.promise();
+	var $prevBtn = $('#pagination').find('#prev');
+	var $nextBtn = $('#pagination').find('#next');
 
-		var jqxhr = $.ajax({
-			type: 'get',
-			url: '/names?limit=100&offset='+offset,
-			dataType: "json",
-			cache: "false"
-		});
-
-		jqxhr.fail($.proxy(function(thexhr, useless, httpstatustext) {
-			if (thexhr.status == 404) {
-				alert("Page not found");
-			}
-
-			deferred.reject(null);
-		}, this));
-
-		jqxhr.done($.proxy(function(responseBody) {
-
-			if (responseBody == null) {
-				alert('No response');
-				deferred.reject(null);
-			}
-			
-			console.log("response", responseBody);
-			
-			//
-			// all hail the glorius response :)
-			//
-			deferred.resolve(responseBody);
-		}, this));
-
-		return promise;
-	}
-
-	*/
-
-
-
-
-
-
-
+	$(document).bind('keyup', 'left', function(){ $prevBtn.get(0).click() });
+	$(document).bind('keyup', 'right', function(){ $nextBtn.get(0).click() });
 
 })(jQuery);
