@@ -43,14 +43,18 @@ namespace daslib.Validators
 				, new LetterNotFollowedByRule("y", "auo")
 				, new LetterNotFollowedByRule("d", "xz")
 
+				, new RegexRule("[^jfw]$") // does not end with any of these
+
 				, new RegexRule("^a[^xgjq][^bcefghjmnpqvwxz]")
 				, new RegexRule("^aco[^csy]", "^aco")
-				, new RegexRule("^az[^iuyo]r", "^az")
+				, new RegexRule("^az[^iuyo]r", "^az.r")
 				, new RegexRule("^aw[^yu]", "^aw")
 				, new DoesNotStartWithRule("abao")
 				, new DoesNotStartWithRule("ahy")
+				, new DoesNotStartWithRule("ababs")
+				, new DoesNotStartWithRule("atit")
 
-				, new RegexRule("[zwrfcj]$")
+				, new RegexRule("[^zwrfcj]$")
 				, new DoesNotEndWithRule("deq")
 				, new DoesNotEndWithRule("eos")
 				, new DoesNotEndWithRule("eov")
@@ -68,20 +72,25 @@ namespace daslib.Validators
 				, new DoesNotEndWithRule("uyl")
 				, new DoesNotEndWithRule("viu")
 				, new DoesNotEndWithRule("xut")
-				, new DoesNotEndWithRule("yb")
 				, new DoesNotEndWithRule("yeg")
+				, new RegexRule("y[^bj]$", "y.$")
 			};
 		}
 
 		public bool IsValid(string name)
 		{
+			return String.IsNullOrEmpty (this.IsValidWithMessage (name));
+		}
+
+		public string IsValidWithMessage (string name)
+		{
 			foreach (IRule rule in this.rules) {
 				if (!rule.Complies (name)) {
-					return false;
+					return rule.Title;
 				}
 			}
 
-			return true;
+			return String.Empty;
 		}
 	}
 }

@@ -64,6 +64,11 @@
     <Compile Include="WebStuff\Models\GetDefault.cs" />
     <Compile Include="WebStuff\Services\GetDefaultService.cs" />
     <Compile Include="WebStuff\Models\Types\DefaultData.cs" />
+    <Compile Include="WebStuff\Models\PostContains.cs" />
+    <Compile Include="WebStuff\Services\PostContainsService.cs" />
+    <Compile Include="WebStuff\Models\Types\SimpleMessage.cs" />
+    <Compile Include="WebStuff\Models\PostValidate.cs" />
+    <Compile Include="WebStuff\Services\PostValidateService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -74,6 +79,7 @@
     <Folder Include="WebStuff\Models\" />
     <Folder Include="WebStuff\Services\" />
     <Folder Include="WebStuff\Models\Types\" />
+    <Folder Include="check\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">
@@ -92,6 +98,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="assets\js\jeresig.jquery.hotkeys.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="check\default.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\js\check-init.js">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="assets\js\ajax.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

@@ -11,6 +11,10 @@ namespace daslib.Validators
 			return true;
 		}
 
+		public string IsValidWithMessage (string name)
+		{
+			return String.Empty;
+		}
 		#endregion
 	}
 }

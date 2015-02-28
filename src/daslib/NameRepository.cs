@@ -15,6 +15,7 @@ namespace daslib
 			this.dbFactory = dbFactory;
 		}
 
+		#region Db helpers
 		private MySqlConnection GetOpenConnection()
 		{
 			var db = this.dbFactory.GetConnection ();
@@ -27,7 +28,39 @@ namespace daslib
 		{
 			return this.GetOpenConnection ().CreateCommand ();
 		}
+		#endregion
 
+		#region Get
+		public NameEntry Get(string name)
+		{
+			var cmd = this.GetCommand ();
+			MySqlDataReader reader = null;
+			try
+			{
+				cmd.CommandText = "select * from `names` where `name`=@name";
+				cmd.Parameters.AddWithValue("@name", name);
+
+				reader = cmd.ExecuteReader (System.Data.CommandBehavior.SingleRow);
+
+				if (reader.Read())
+				{
+					return this.Populate(reader);
+				}
+
+				return default(NameEntry);
+			}
+			finally
+			{
+				if (reader != default(MySqlDataReader))
+				{
+					reader.Close ();
+				}
+				cmd.Connection.Close ();
+			}
+		}
+		#endregion
+
+		#region Count
 		public int CountNames()
 		{
 			var cmd = this.GetCommand ();
@@ -54,7 +87,9 @@ namespace daslib
 				cmd.Connection.Close ();
 			}
 		}
+		#endregion
 
+		#region Get list
 		public IList<NameEntry> GetList(int offset, int limit)
 		{
 			IList<NameEntry> list = new List<NameEntry>();
@@ -85,7 +120,9 @@ namespace daslib
 				cmd.Connection.Close ();
 			}
 		}
+		#endregion
 
+		#region Populate
 		private NameEntry Populate(MySqlDataReader reader)
 		{
 			var res = new NameEntry ();
@@ -97,6 +134,7 @@ namespace daslib
 
 			return res;
 		}
+		#endregion
 	}
 }
 

@@ -1,0 +1,48 @@
+﻿@using daslib
+
+@section PageScripts {
+	<script type="text/javascript" src="/assets/js/ajax.js"></script>
+	<script type="text/javascript" src="/assets/js/check-init.js"></script>
+}
+
+	<div class="row">
+		<div class="col-md-12 text-center">
+			<h1>Check stuff</h1> (<a href="/default">show names</a>)
+		</div>
+	</div>
+
+
+	<div id="contains">
+		<div class="row">
+			<div class="col-md-12"><h3>Check whether database contains a specific name</h3></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<form>
+					<input type="text" class="form-control" placeholder="enter name">
+				</form>
+			</div>
+			<div class="col-md-8">
+				<p class="result"></p>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="validate">
+		<div class="row">
+			<div class="col-md-12"><h3>Check whether a given name would pass validation</h3></div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4">
+				<form>
+					<input type="text" class="form-control" placeholder="enter name">
+				</form>
+			</div>
+			<div class="col-md-8">
+				<p class="result"></p>
+			</div>
+		</div>
+	</div>

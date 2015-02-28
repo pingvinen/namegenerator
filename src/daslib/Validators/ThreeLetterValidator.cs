@@ -18,13 +18,18 @@ namespace daslib.Validators
 
 		public bool IsValid(string name)
 		{
+			return String.IsNullOrEmpty (this.IsValidWithMessage (name));
+		}
+
+		public string IsValidWithMessage (string name)
+		{
 			foreach (IRule rule in this.rules) {
 				if (!rule.Complies (name)) {
-					return false;
+					return rule.Title;
 				}
 			}
 
-			return true;
+			return String.Empty;
 		}
 	}
 }
