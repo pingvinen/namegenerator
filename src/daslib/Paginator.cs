@@ -11,6 +11,12 @@ namespace daslib
 		public int TotalPages { get; set; }
 		public int CurrentPage { get; set; }
 
+		public int RangeCount
+		{
+			get { return this.rangeCount; }
+			set { this.rangeCount = value; }
+		}
+
 		public bool IsFirstPage
 		{
 			get
@@ -72,7 +78,7 @@ namespace daslib
 				int count = this.rangeCount;
 				if (this.CurrentPage < count)
 				{
-					count = Math.Min(this.rangeCount, Math.Abs(this.CurrentPage-1 - this.rangeCount));
+					count = Math.Min(this.rangeCount, this.rangeCount - Math.Abs(this.CurrentPage - this.rangeCount));
 				}
 
 				return Enumerable.Range (start, count).ToList();

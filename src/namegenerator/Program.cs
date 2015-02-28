@@ -32,8 +32,10 @@ namespace namegenerator
 				storage.Clear ();
 			}
 
-			var all = "abcdefghijklmnopqrstuvwxyz";
-			var consonants = "bcdfghjklmnpqrstvwxz";
+			string all = "abcdefghijklmnopqrstuvwxyz";
+			string vowels = "aeiouy";
+			string consonants = "bcdfghjklmnpqrstvwxz";
+
 
 			var gen = new Generator ();
 
@@ -41,57 +43,57 @@ namespace namegenerator
 				RunIt ("test", gen, storage, new AcceptingValidator (), new List<string> () {
 					"a"
 					, consonants
-					, all
+					, vowels
 				});
 			}
 
 			if (doThree) {
 				RunIt ("3 letters", gen, storage, new ThreeLetterValidator (), new List<string> () {
 					"a"
-				, consonants
-				, all
+					, consonants
+					, vowels
 				});
 			}
 
 			if (doFour) {
 				RunIt ("4 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
 					"a"
-				, consonants
-				, all
-				, all
+					, consonants
+					, all
+					, all
 				});
 			}
 
 			if (doFive) {
 				RunIt ("5 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
 					"a"
-				, consonants
-				, all
-				, all
-				, all
+					, consonants
+					, all
+					, all
+					, all
 				});
 			}
 
 			if (doSix) {
 				RunIt ("6 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
 					"a"
-				, consonants
-				, all
-				, all
-				, all
-				, all
+					, consonants
+					, all
+					, all
+					, all
+					, all
 				});
 			}
 
 			if (doSeven) {
 				RunIt ("7 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
 					"a"
-				, consonants
-				, all
-				, all
-				, all
-				, all
-				, all
+					, consonants
+					, all
+					, all
+					, all
+					, all
+					, all
 				});
 			}
 
