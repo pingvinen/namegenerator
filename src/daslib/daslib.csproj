@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1EB8CC03-20D3-4510-8692-3F7C92D25053}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>daslib</RootNamespace>
+    <AssemblyName>daslib</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\libs\nuget\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IRule.cs" />
+    <Compile Include="IValidator.cs" />
+    <Compile Include="Rules\ConsonantsInARowRule.cs" />
+    <Compile Include="Rules\DoesNotEndWithRule.cs" />
+    <Compile Include="Rules\DoesNotStartWithRule.cs" />
+    <Compile Include="Rules\DoubleVowelsRule.cs" />
+    <Compile Include="Rules\EchoRule.cs" />
+    <Compile Include="Rules\EndsOnThreeVowelsRule.cs" />
+    <Compile Include="Rules\EndsOnTwoConsonantsRule.cs" />
+    <Compile Include="Rules\LetterCountRule.cs" />
+    <Compile Include="Rules\LetterNotFollowedByRule.cs" />
+    <Compile Include="Rules\NumberOfVowelsRule.cs" />
+    <Compile Include="Rules\RegexRule.cs" />
+    <Compile Include="Rules\RepeatedCharactersRule.cs" />
+    <Compile Include="Validators\MultiLetterValidator.cs" />
+    <Compile Include="Validators\ThreeLetterValidator.cs" />
+    <Compile Include="Validators\AcceptingValidator.cs" />
+    <Compile Include="MySqlConnectionFactory.cs" />
+    <Compile Include="NameRepository.cs" />
+    <Compile Include="NameEntry.cs" />
+    <Compile Include="Paginator.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Validators\" />
+  </ItemGroup>
+</Project>

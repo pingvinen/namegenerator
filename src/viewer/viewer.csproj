@@ -62,8 +62,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebStuff\AppHost.cs" />
     <Compile Include="WebStuff\Models\GetDefault.cs" />
-    <Compile Include="WebStuff\Models\Types\Stats.cs" />
     <Compile Include="WebStuff\Services\GetDefaultService.cs" />
+    <Compile Include="WebStuff\Models\Types\DefaultData.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -91,5 +91,11 @@
     <None Include="Views\GetDefault.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\daslib\daslib.csproj">
+      <Project>{1EB8CC03-20D3-4510-8692-3F7C92D25053}</Project>
+      <Name>daslib</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

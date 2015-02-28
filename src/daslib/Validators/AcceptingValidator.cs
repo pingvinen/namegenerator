@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace namegenerator
+namespace daslib.Validators
 {
 	public class AcceptingValidator : IValidator
 	{

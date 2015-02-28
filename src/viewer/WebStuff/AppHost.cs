@@ -4,6 +4,7 @@ using ServiceStack.Razor;
 using ServiceStack.CacheAccess.Providers;
 using ServiceStack.CacheAccess;
 using ServiceStack.ServiceHost;
+using daslib;
 
 namespace viewer.WebStuff
 {
@@ -26,6 +27,8 @@ namespace viewer.WebStuff
 			this.Plugins.Add(new RazorFormat());
 
 			container.Register<ICacheClient>(new MemoryCacheClient());
+			container.Register<MySqlConnectionFactory> (new MySqlConnectionFactory ());
+			container.RegisterAutoWired<NameRepository> ();
 
 			this.ServiceExceptionHandler = (IHttpRequest httpReq, object request, Exception exception) => {
 				Console.Error.WriteLine("{0}\n\n-----\n\n{1}", request, exception);

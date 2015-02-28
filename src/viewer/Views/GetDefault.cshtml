@@ -1,13 +1,46 @@
-﻿@inherits ViewPage<viewer.Stats>
+﻿@using daslib
+@inherits ViewPage<viewer.WebStuff.Models.Types.DefaultData>
 
 @section PageScripts {
 	<script type="text/javascript" src="/assets/js/default-init.js"></script>
 }
 
-<div class="row">
-	<div class="col-md-12">
-		<h1>Yo der</h1>
-		<p>The database has @(Model.NumberOfNames) names!!</p>
+	<div class="row">
+		<div class="col-md-12">
+			<p>The database has @(String.Format("{0:#,##0}", Model.NumberOfNames)) names!!</p>
+		</div>
 	</div>
-</div>
 
+
+	<div id="pagination">
+		<div class="row">
+			<div class="col-md-12">
+				<a href="/default/@(Model.Paginator.FirstPage)" class="btn btn-default">First</a>
+
+				<a href="/default/@(Model.Paginator.PrevPage)" class="btn btn-primary">Prev</a>
+
+				@foreach (int page in Model.Paginator.PagesBefore) {
+					<a href="/default/@(page)" class="btn">@(page+1)</a>
+				}
+
+				<a href="/default/@(Model.Paginator.CurrentPage)" class="btn active">@(Model.Paginator.CurrentPage+1)</a>
+
+				@foreach (int page in Model.Paginator.PagesAfter) {
+					<a href="/default/@(page)" class="btn">@(page+1)</a>
+				}
+
+				<a href="/default/@(Model.Paginator.NextPage)" class="btn btn-primary">Next</a>
+
+				<a href="/default/@(Model.Paginator.LastPage)" class="btn btn-default">Last</a>
+			</div>
+		</div>
+	</div>
+
+
+	@foreach (NameEntry entry in Model.Names) {
+		<div class="row">
+			<div class="col-md-12">
+				<p>@(entry.Name)</p>
+			</div>
+		</div>
+	}

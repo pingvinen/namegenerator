@@ -1,6 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
-using namegenerator.Rules;
+using daslib.Rules;
 
 namespace tests.Rules
 {

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using namegenerator.Rules;
+using daslib.Rules;
 
-namespace namegenerator
+namespace daslib.Validators
 {
 	public class MultiLetterValidator : IValidator
 	{

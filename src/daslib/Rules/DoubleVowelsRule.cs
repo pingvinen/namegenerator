@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace namegenerator
+namespace daslib.Rules
 {
-	public class EndsOnThreeVowelsRule : IRule
+	public class DoubleVowelsRule : IRule
 	{
-		private Regex regex = new Regex("[aeiouy]{3,}$", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+		private Regex regex = new Regex("([aeiouy])\\1", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
 		#region IRule implementation
 
@@ -16,7 +16,7 @@ namespace namegenerator
 
 		public string Title {
 			get {
-				return "Ends on three vowels";
+				return "No double vowels";
 			}
 		}
 

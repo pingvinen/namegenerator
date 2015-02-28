@@ -29,7 +29,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="nunit.framework">
-      <HintPath>..\..\..\libs\nuget\nunit.framework.dll</HintPath>
+      <HintPath>..\..\libs\nuget\nunit.framework.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -46,12 +46,17 @@
     <Compile Include="Rules\RegexRuleTests.cs" />
     <Compile Include="Rules\DoesNotStartWithRuleTests.cs" />
     <Compile Include="Rules\DoesNotEndWithRuleTests.cs" />
+    <Compile Include="PaginatorTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\namegenerator\namegenerator.csproj">
       <Project>{72846DC5-14EC-4981-8BCF-F9B96C684B75}</Project>
       <Name>namegenerator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\daslib\daslib.csproj">
+      <Project>{1EB8CC03-20D3-4510-8692-3F7C92D25053}</Project>
+      <Name>daslib</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

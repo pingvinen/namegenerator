@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace namegenerator
+namespace daslib
 {
 	public interface IValidator
 	{

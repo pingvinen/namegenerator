@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace namegenerator
+namespace daslib.Rules
 {
 	public class EndsOnTwoConsonantsRule : IRule
 	{

@@ -1,5 +1,6 @@
 ﻿using System;
 using MySql.Data.MySqlClient;
+using daslib;
 
 namespace namegenerator
 {
@@ -13,7 +14,7 @@ namespace namegenerator
 
 		public virtual void Init()
 		{
-			this.db = new MySqlConnection ("Server=127.0.0.1;Uid=namegen;Pwd=123456;Database=ada;");
+			this.db = (new MySqlConnectionFactory ()).GetConnection ();
 			this.db.Open ();
 		}
 

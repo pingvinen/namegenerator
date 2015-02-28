@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Collections.Generic;
-using namegenerator.Rules;
+using daslib.Rules;
 
-namespace namegenerator
+namespace daslib.Validators
 {
 	public class ThreeLetterValidator : IValidator
 	{

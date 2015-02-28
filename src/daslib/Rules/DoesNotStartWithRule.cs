@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace namegenerator
+namespace daslib.Rules
 {
 	public class DoesNotStartWithRule : IRule
 	{

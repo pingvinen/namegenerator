@@ -1,13 +1,14 @@
 ﻿using System;
 using NUnit.Framework;
-using namegenerator.Rules;
+using daslib;
+using daslib.Rules;
 
 namespace tests.Rules
 {
 	[TestFixture]
 	public class NumberOfVowelsRuleTests
 	{
-		private NumberOfVowelsRule rule;
+		private IRule rule;
 
 		[SetUp]
 		public void Setup()

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace namegenerator.Rules
+namespace daslib.Rules
 {
 	public class ConsonantsInARowRule : IRule
 	{
