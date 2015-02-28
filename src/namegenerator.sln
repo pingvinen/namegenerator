@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "namegenerator", "namegenera
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tests", "tests\tests.csproj", "{2C1F8644-AE7B-4206-90DC-9E1AF7C97564}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "viewer", "viewer\viewer.csproj", "{7280325B-BD60-4995-953B-018966E7D95B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -15,12 +17,13 @@ Global
 		{2C1F8644-AE7B-4206-90DC-9E1AF7C97564}.Debug|x86.Build.0 = Debug|Any CPU
 		{2C1F8644-AE7B-4206-90DC-9E1AF7C97564}.Release|x86.ActiveCfg = Release|Any CPU
 		{2C1F8644-AE7B-4206-90DC-9E1AF7C97564}.Release|x86.Build.0 = Release|Any CPU
+		{7280325B-BD60-4995-953B-018966E7D95B}.Debug|x86.ActiveCfg = Debug|x86
+		{7280325B-BD60-4995-953B-018966E7D95B}.Debug|x86.Build.0 = Debug|x86
+		{7280325B-BD60-4995-953B-018966E7D95B}.Release|x86.ActiveCfg = Release|x86
+		{7280325B-BD60-4995-953B-018966E7D95B}.Release|x86.Build.0 = Release|x86
 		{72846DC5-14EC-4981-8BCF-F9B96C684B75}.Debug|x86.ActiveCfg = Debug|x86
 		{72846DC5-14EC-4981-8BCF-F9B96C684B75}.Debug|x86.Build.0 = Debug|x86
 		{72846DC5-14EC-4981-8BCF-F9B96C684B75}.Release|x86.ActiveCfg = Release|x86
 		{72846DC5-14EC-4981-8BCF-F9B96C684B75}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = namegenerator\namegenerator.csproj
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,35 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Namegenerator</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+		
+		<!-- Optional theme -->
+		<!--<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">-->
+	
+		<!-- Our own CSS -->
+		<link rel="stylesheet" type="text/css" href="/assets/style.css">
+	</head>
+	
+	<body>
+	
+		<!-- content -->
+		<div class="container">
+			@RenderBody()
+		</div>
+		
+		
+		<!-- Latest compiled and minified JavaScript -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+		
+		<!-- Scripts required by the current page -->
+		@RenderSection("PageScripts", required: false)
+	</body>
+</html>

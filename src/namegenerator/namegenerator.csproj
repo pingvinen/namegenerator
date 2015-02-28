@@ -34,7 +34,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="MySql.Data">
-      <HintPath>..\..\..\libs\nuget\MySql.Data.dll</HintPath>
+      <HintPath>..\..\libs\nuget\MySql.Data.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

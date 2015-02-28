@@ -6,6 +6,10 @@ DEST=libs/nuget/
 DOCLEANUP=true
 SS_VERSION="3.9.71"
 
+if [ ! -z "$1" ] && [ "$1" = "debug" ]; then
+	DOCLEANUP=false
+fi
+
 function get_package() {
 	local name=$1
 	local version=$2
@@ -30,5 +34,7 @@ rm $DEST/* -rf
 get_package "ServiceStack" $SS_VERSION "net35"
 get_package "ServiceStack.Common" $SS_VERSION "net35"
 get_package "ServiceStack.Text" $SS_VERSION "net35"
+get_package "ServiceStack.Razor" $SS_VERSION "net40"
+get_package "System.Web.Razor.Unofficial" "2.0.2" "net40" # needed by ServiceStack.Razor
 get_package "NUnit" "2.6.4" ""
 get_package "MySql.Data" "6.9.5" "net40"
