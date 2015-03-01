@@ -48,6 +48,7 @@
     <Compile Include="Rules\DoesNotEndWithRuleTests.cs" />
     <Compile Include="PaginatorTests.cs" />
     <Compile Include="Validators\RuleBasedValidatorTests.cs" />
+    <Compile Include="Validators\MultiLetterRuleBasedValidatorTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

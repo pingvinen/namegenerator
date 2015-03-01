@@ -40,10 +40,13 @@ namespace namegenerator
 			var gen = new Generator ();
 
 			if (doTest) {
-				RunIt ("test", gen, storage, new AcceptingValidator (), new List<string> () {
+				RunIt ("test", gen, new BlackholeStorage(), new MultiLetterRuleBasedValidator (), new List<string> () {
 					"a"
-					, consonants
-					, vowels
+					, "b"
+					, "a"
+					, "t"
+					, "y"
+					, "c"
 				});
 			}
 

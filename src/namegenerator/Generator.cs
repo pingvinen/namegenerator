@@ -39,7 +39,7 @@ namespace namegenerator
 					Console.Write (".");
 				}
 				if (result.EntriesGenerated % 10000 == 0) {
-					Console.WriteLine ("[{0:#,##0}/{1:#,##0}]", result.EntriesGenerated, max);
+					Console.WriteLine ("[{0:#,##0}/{1:#,##0} (valid:{2:#,##0})]", result.EntriesGenerated, max, result.ValidEntries);
 				}
 
 

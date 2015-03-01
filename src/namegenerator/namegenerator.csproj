@@ -47,6 +47,7 @@
     <Compile Include="GenerateResult.cs" />
     <Compile Include="Args.cs" />
     <Compile Include="BufferedDbStorage.cs" />
+    <Compile Include="BlackholeStorage.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
