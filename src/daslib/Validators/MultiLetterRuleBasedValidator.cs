@@ -4,13 +4,11 @@ using daslib.Rules;
 
 namespace daslib.Validators
 {
-	public class MultiLetterValidator : IValidator
+	public class MultiLetterRuleBasedValidator : RuleBasedValidatorBase
 	{
-		private List<IRule> rules;
-
-		public MultiLetterValidator()
+		public MultiLetterRuleBasedValidator()
 		{
-			this.rules = new List<IRule> () {
+			base.rules = new List<IRule> () {
 				  new RepeatedCharactersRule(3)
 				, new NumberOfVowelsRule(2, 4)
 				, new ConsonantsInARowRule(3)
@@ -75,22 +73,6 @@ namespace daslib.Validators
 				, new DoesNotEndWithRule("yeg")
 				, new RegexRule("y[^bj]$", "y.$")
 			};
-		}
-
-		public bool IsValid(string name)
-		{
-			return String.IsNullOrEmpty (this.IsValidWithMessage (name));
-		}
-
-		public string IsValidWithMessage (string name)
-		{
-			foreach (IRule rule in this.rules) {
-				if (!rule.Complies (name)) {
-					return rule.Title;
-				}
-			}
-
-			return String.Empty;
 		}
 	}
 }

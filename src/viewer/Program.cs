@@ -13,6 +13,8 @@ namespace viewer
 			appHost.Init ();
 			appHost.Start ("http://*:15620/");
 
+			Console.WriteLine ("Viewer is available at http://localhost:15620");
+
 			Console.ReadLine ();
 		}
 	}

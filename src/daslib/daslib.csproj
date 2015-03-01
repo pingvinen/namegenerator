@@ -50,14 +50,15 @@
     <Compile Include="Rules\NumberOfVowelsRule.cs" />
     <Compile Include="Rules\RegexRule.cs" />
     <Compile Include="Rules\RepeatedCharactersRule.cs" />
-    <Compile Include="Validators\MultiLetterValidator.cs" />
-    <Compile Include="Validators\ThreeLetterValidator.cs" />
     <Compile Include="Validators\AcceptingValidator.cs" />
     <Compile Include="MySqlConnectionFactory.cs" />
     <Compile Include="NameRepository.cs" />
     <Compile Include="NameEntry.cs" />
     <Compile Include="Paginator.cs" />
     <Compile Include="ValidatorFactory.cs" />
+    <Compile Include="Validators\RuleBasedValidatorBase.cs" />
+    <Compile Include="Validators\MultiLetterRuleBasedValidator.cs" />
+    <Compile Include="Validators\ThreeLetterRuleBasedValidator.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

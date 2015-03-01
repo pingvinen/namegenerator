@@ -47,6 +47,7 @@
     <Compile Include="Rules\DoesNotStartWithRuleTests.cs" />
     <Compile Include="Rules\DoesNotEndWithRuleTests.cs" />
     <Compile Include="PaginatorTests.cs" />
+    <Compile Include="Validators\RuleBasedValidatorTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -61,5 +62,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Rules\" />
+    <Folder Include="Validators\" />
   </ItemGroup>
 </Project>

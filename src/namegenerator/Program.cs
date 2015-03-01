@@ -48,7 +48,7 @@ namespace namegenerator
 			}
 
 			if (doThree) {
-				RunIt ("3 letters", gen, storage, new ThreeLetterValidator (), new List<string> () {
+				RunIt ("3 letters", gen, storage, new ThreeLetterRuleBasedValidator (), new List<string> () {
 					"a"
 					, consonants
 					, vowels
@@ -56,7 +56,7 @@ namespace namegenerator
 			}
 
 			if (doFour) {
-				RunIt ("4 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
+				RunIt ("4 letters", gen, storage, new MultiLetterRuleBasedValidator (), new List<string> () {
 					"a"
 					, consonants
 					, all
@@ -65,7 +65,7 @@ namespace namegenerator
 			}
 
 			if (doFive) {
-				RunIt ("5 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
+				RunIt ("5 letters", gen, storage, new MultiLetterRuleBasedValidator (), new List<string> () {
 					"a"
 					, consonants
 					, all
@@ -75,7 +75,7 @@ namespace namegenerator
 			}
 
 			if (doSix) {
-				RunIt ("6 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
+				RunIt ("6 letters", gen, storage, new MultiLetterRuleBasedValidator (), new List<string> () {
 					"a"
 					, consonants
 					, all
@@ -86,7 +86,7 @@ namespace namegenerator
 			}
 
 			if (doSeven) {
-				RunIt ("7 letters", gen, storage, new MultiLetterValidator (), new List<string> () {
+				RunIt ("7 letters", gen, storage, new MultiLetterRuleBasedValidator (), new List<string> () {
 					"a"
 					, consonants
 					, all

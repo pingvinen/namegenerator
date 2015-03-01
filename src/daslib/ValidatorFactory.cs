@@ -31,9 +31,9 @@ namespace daslib
 
 		public IValidator ThreeLetter()
 		{
-			if (this.three == default(ThreeLetterValidator))
+			if (this.three == default(ThreeLetterRuleBasedValidator))
 			{
-				this.three = new ThreeLetterValidator ();
+				this.three = new ThreeLetterRuleBasedValidator ();
 			}
 
 			return this.three;
@@ -41,9 +41,9 @@ namespace daslib
 
 		public IValidator MultiLetter()
 		{
-			if (this.multi == default(MultiLetterValidator))
+			if (this.multi == default(MultiLetterRuleBasedValidator))
 			{
-				this.multi = new MultiLetterValidator ();
+				this.multi = new MultiLetterRuleBasedValidator ();
 			}
 
 			return this.multi;
